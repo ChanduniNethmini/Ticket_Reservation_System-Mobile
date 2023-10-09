@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ticket Management System</string>
+    <string name="search_text">Searching...</string>
 </resources>
