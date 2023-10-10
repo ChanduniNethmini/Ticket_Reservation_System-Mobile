@@ -186,16 +186,16 @@
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/booking" />
+                        app:srcCompat="@drawable/bookings" />
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="120sp"
                         android:layout_height="wrap_content"
-                        android:text="Seethawaka odyssey train"
                         android:layout_marginStart="10dp"
-                        android:textSize="18sp"
-                        android:textColor="#000000"/>
+                        android:text="Seethawaka odyssey train"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
                     <TextView
                         android:id="@+id/textView9"
                         android:layout_width="150sp"
@@ -222,7 +222,7 @@
                 android:layout_marginEnd="10dp">
 
                 <LinearLayout
-                    android:layout_width="400dp"
+                    android:layout_width="410dp"
                     android:layout_height="80sp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
@@ -232,7 +232,7 @@
                         android:layout_width="45dp"
                         android:layout_height="50dp"
                         android:paddingLeft="10dp"
-                        app:srcCompat="@drawable/booking" />
+                        app:srcCompat="@drawable/bookings" />
 
                     <TextView
                         android:id="@+id/textView10"

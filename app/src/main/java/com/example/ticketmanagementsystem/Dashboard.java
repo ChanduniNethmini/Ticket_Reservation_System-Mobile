@@ -17,8 +17,8 @@ public class Dashboard extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
 
-        button = (Button) findViewById(R.id.button2);
-        button2 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,7 +33,7 @@ public class Dashboard extends AppCompatActivity {
         });
     }
     public void openActivity2(){
-        Intent intent = new Intent(this, ViewBooking.class);
+        Intent intent = new Intent(this, ReservationCreate.class);
         startActivity(intent);
     }
     public void openActivity3(){
