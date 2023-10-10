@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicketManagementSystem">
         <activity
+            android:name=".ViewOneReservation"
+            android:exported="true" />
+        <activity
+            android:name=".ReservationCreate"
+            android:exported="true" />
+        <activity
             android:name=".DisplayBookings"
             android:exported="true" />
         <activity
