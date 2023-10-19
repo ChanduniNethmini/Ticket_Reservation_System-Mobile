@@ -33,7 +33,7 @@ public class Dashboard extends AppCompatActivity {
         });
     }
     public void openActivity2(){
-        Intent intent = new Intent(this, ReservationCreate.class);
+        Intent intent = new Intent(this, TrainsMainActivity.class);
         startActivity(intent);
     }
     public void openActivity3(){
