@@ -1,79 +1,58 @@
 package com.example.ticketmanagementsystem.data.models;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.util.Date;
-
 public class Reservation {
-    @SerializedName("id")
-    private String id;
-    @SerializedName("travelerID")
-    private int travelerID;
-    @SerializedName("reservationDate")
-    private Date reservationDate;
-    @SerializedName("bookingDate")
-    private Date bookingDate;
-    @SerializedName("trainID")
+    private String nic;
+    private String reservationDate;
+    private String bookingDate;
     private String trainID;
-    @SerializedName("startLocation")
+    private String trainName;
     private String startLocation;
-    @SerializedName("destination")
     private String destination;
-    @SerializedName("classType")
-    private String classType;
-    @SerializedName("departureTime")
-    private Date departureTime;
-    @SerializedName("price")
-    private float price;
-    @SerializedName("seatCount")
-    private int seatCount;
-    @SerializedName("status")
-    private int status;
+    private String trainClass;
+    private String departureTime;
+    private String price;
+    private String seatCount;
+    private String status;
 
-    public Reservation(String id, String trainID, String startLocation, float price) {
-        this.id = id;
-        this.travelerID = travelerID;
+
+    public Reservation(String nic, String reservationDate, String bookingDate, String trainID,String trainName, String startLocation,
+                       String destination, String trainClass, String departureTime, String price, String seatCount, String status) {
+        this.nic = nic;
         this.reservationDate = reservationDate;
         this.bookingDate = bookingDate;
         this.trainID = trainID;
+        this.trainName = trainName;
         this.startLocation = startLocation;
         this.destination = destination;
-        this.classType = classType;
+        this.trainClass = trainClass;
         this.departureTime = departureTime;
         this.price = price;
         this.seatCount = seatCount;
         this.status = status;
     }
 
-    public String getid() {
-        return id;
+
+    public String getNic() {
+        return nic;
     }
 
-    public void setid(String id) {
-        this.id = id;
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 
-    public int getTravelerID() {
-        return travelerID;
-    }
-
-    public void setTravelerID(int travelerID) {
-        this.travelerID = travelerID;
-    }
-
-    public Date getReservationDate() {
+    public String getReservationDate() {
         return reservationDate;
     }
 
-    public void setReservationDate(Date reservationDate) {
+    public void setReservationDate(String reservationDate) {
         this.reservationDate = reservationDate;
     }
 
-    public Date getBookingDate() {
+    public String getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(Date bookingDate) {
+    public void setBookingDate(String bookingDate) {
         this.bookingDate = bookingDate;
     }
 
@@ -83,6 +62,14 @@ public class Reservation {
 
     public void setTrainID(String trainID) {
         this.trainID = trainID;
+    }
+
+    public String getTrainName() {
+        return trainName;
+    }
+
+    public void setTrainName(String trainName) {
+        this.trainName = trainName;
     }
 
     public String getStartLocation() {
@@ -101,45 +88,43 @@ public class Reservation {
         this.destination = destination;
     }
 
-    public String getClassType() {
-        return classType;
+    public String getTrainClass() {
+        return trainClass;
     }
 
-    public void setClassType(String classType) {
-        this.classType = classType;
+    public void setTrainClass(String trainClass) {
+        this.trainClass = trainClass;
     }
 
-    public Date getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Date departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
-    public float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getSeatCount() {
+    public String getSeatCount() {
         return seatCount;
     }
 
-    public void setSeatCount(int seatCount) {
+    public void setSeatCount(String seatCount) {
         this.seatCount = seatCount;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
-
-
 }

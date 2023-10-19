@@ -27,6 +27,9 @@
             android:name=".DisplayBookings"
             android:exported="true" />
         <activity
+            android:name=".TrainsMainActivity"
+            android:exported="true" />
+        <activity
             android:name=".Dashboard"
             android:exported="true" />
         <activity

@@ -115,7 +115,6 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/editDestination2" />
 
-      <!-- Date Picker Button -->
       <Button
           android:id="@+id/btnDatePicker"
           android:layout_width="wrap_content"

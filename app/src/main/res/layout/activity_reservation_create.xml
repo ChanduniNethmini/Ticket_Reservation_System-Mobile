@@ -7,160 +7,203 @@
     android:layout_height="match_parent"
     tools:context=".ReservationCreate">
 
-    <!-- CardView -->
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="14dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:text="Complete Your Reaservation"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="395dp"
+        android:layout_height="417dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="104dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-        <!-- Title -->
+        tools:context=".ReservationCreate">
 
-
-    </RelativeLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true"
-        app:contentPaddingTop="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <!-- ConstraintLayout inside CardView -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="391dp"
-            android:layout_height="517dp"
-            android:paddingLeft="16dp"
-            android:paddingTop="0dp"
-            android:paddingRight="16dp">
-
-
-            <!-- Start Location Input -->
-
-            <!-- Destination Input -->
-
-            <!-- Number of Passengers Input -->
-
-            <EditText
-                android:id="@+id/editStartLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="34dp"
-                android:hint="Start Location"
-                android:minHeight="48dp"
-                app:layout_constraintBottom_toTopOf="@+id/editDestination"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvReservationTitle" />
-
-            <EditText
-                android:id="@+id/editDestination"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:hint="Destination"
-                android:minHeight="48dp"
-                app:layout_constraintBottom_toTopOf="@+id/editDestination2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editStartLocation" />
-
-            <EditText
-                android:id="@+id/editDestination2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Number of Passengers"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editDestination" />
-
-            <EditText
-                android:id="@+id/editPassengers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:hint="Time"
-                android:inputType="number"
-                android:minHeight="48dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnDatePicker"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editDestination2"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <EditText
-                android:id="@+id/classType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:hint="Class"
-                android:inputType="number"
-                android:minHeight="48dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnDatePicker"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPassengers" />
-
-            <!-- Date Picker Button -->
-            <Button
-                android:id="@+id/btnDatePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#d3d3d3"
-                android:text="Select Date"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.071"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/classType" />
-
-            <Button
-                android:id="@+id/btnCreateReservation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/black"
-                android:text="Create Reservation"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnDatePicker" />
+        <!-- Start Location -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvReservationTitle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="8dp"
-                android:text="Make Your Reservation"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="8dp"
                 android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.395"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                android:textSize="20dp"
+                android:text="Train Name:" />
+
+            <TextView
+                android:id="@+id/trainName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Name"
+                android:textSize="20dp"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Destination -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="8dp"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="From:" />
+
+            <TextView
+                android:id="@+id/trainStart"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:minHeight="48dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="8dp"
+                android:text="To:" />
+
+            <TextView
+                android:id="@+id/trainStop"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Number of Passengers -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="8dp"
+                android:text="Passengers Count:"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/editPassengers"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:hint="Number of Passengers"
+                android:minHeight="48dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <!-- Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="8dp"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Time:" />
+
+            <TextView
+                android:id="@+id/editTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:hint="Time"
+                android:inputType="number"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+
+
+        <!-- Class -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="8dp"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Seat Class:" />
+
+            <TextView
+                android:id="@+id/classType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Class"
+                android:textSize="20dp"
+                android:inputType="number"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Create Reservation Button -->
+        <Button
+            android:id="@+id/btnCreateReservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#000000"
+            android:text="Confirm Reservation"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="304dp"
