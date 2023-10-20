@@ -23,6 +23,9 @@ public interface ApiService {
     @GET("api/reservations/getAll")
     Call<ArrayList<ReservationBooked>> getAllReservations();
 
+    @GET("api/traveler/{nic}")
+    Call<ArrayList<ReservationBooked>> getOngoingReservations();
+
     @POST("api/reservations/add")
     Call<Reservation> createReservation(@Body Reservation reservation);
 

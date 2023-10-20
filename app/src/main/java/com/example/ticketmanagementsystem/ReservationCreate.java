@@ -43,7 +43,7 @@ import android.widget.TextView;
 
 
 public class ReservationCreate extends AppCompatActivity {
-    private TextView  trainName,startLocationTextView,endLocationTextView, passengerView,bookingTimeView, trainClassTextView;
+    private TextView  trainName,startLocationTextView,endLocationTextView, passengerView,bookingTimeView, trainClassTextView, price ;
     private Button createReservationButton;
 
     @Override
@@ -58,6 +58,7 @@ public class ReservationCreate extends AppCompatActivity {
         bookingTimeView = findViewById(R.id.editTime);
         trainClassTextView = findViewById(R.id.classType);
         createReservationButton = findViewById(R.id.btnCreateReservation);
+        price = findViewById(R.id.pricePP);
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -67,7 +68,7 @@ public class ReservationCreate extends AppCompatActivity {
             bookingTimeView.setText(intent.getStringExtra("startTime"));
             passengerView.setText(intent.getStringExtra("passengerCount"));
             trainClassTextView.setText(intent.getStringExtra("trainClass"));
-
+            price.setText(intent.getStringExtra("price"));
 
         }
 
@@ -80,6 +81,7 @@ public class ReservationCreate extends AppCompatActivity {
                 String time = intent.getStringExtra("startTime");
                 String start = intent.getStringExtra("startLocation");
                 String end = intent.getStringExtra("destination");
+                String price = intent.getStringExtra("price");
                 String count = passengerView.getText().toString();
                 String trainClass = trainClassTextView.getText().toString();
                 Reservation reservation = new Reservation(
@@ -92,7 +94,7 @@ public class ReservationCreate extends AppCompatActivity {
                         end,
                         trainClass,
                         time,
-                        "200",
+                        price,
                         count,
                         "1"
                 );

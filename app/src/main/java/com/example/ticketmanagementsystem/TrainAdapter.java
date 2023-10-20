@@ -43,6 +43,7 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.TrainViewHol
         holder.trainStartTimeTextView.setText(train.getStartLocationArrivalTime());
         holder.trainLocationTextView.setText(train.getStartLocation());
         holder.trainDestinationTextView.setText(train.getDestination());
+        holder.trainSeatCount.setText(train.getAvailableSeats());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +58,7 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.TrainViewHol
                 intent.putExtra("destination", train.getDestination());
                 intent.putExtra("passengerCount", count);
                 intent.putExtra("trainClass", train.getTrainClass());
+                intent.putExtra("price", train.getTicketPrice());
 
                 view.getContext().startActivity(intent);
             }
@@ -73,6 +75,7 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.TrainViewHol
         TextView trainStartTimeTextView;
         TextView trainLocationTextView;
         TextView trainDestinationTextView;
+        TextView trainSeatCount;
 
         public TrainViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -80,6 +83,7 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.TrainViewHol
             trainStartTimeTextView = itemView.findViewById(R.id.trainStartTimeTextView);
             trainLocationTextView = itemView.findViewById(R.id.trainLocationTextView);
             trainDestinationTextView = itemView.findViewById(R.id.trainDestinationTextView);
+            trainSeatCount = itemView.findViewById(R.id.trainSeatCountTextView);
         }
     }
 }

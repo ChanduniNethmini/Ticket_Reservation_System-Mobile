@@ -14,7 +14,10 @@ import com.example.ticketmanagementsystem.data.api.ApiService;
 import com.example.ticketmanagementsystem.data.models.Reservation;
 import com.example.ticketmanagementsystem.data.models.ReservationBooked;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,9 +26,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class DisplayBookings extends AppCompatActivity {
+public class Ongoing extends AppCompatActivity {
 
-    private Button button, button1, button2;
+    private Button button;
     private ArrayList<ReservationBooked> modelArrayList;
     private ApiService myApi;
     private ListView lv;
@@ -35,27 +38,13 @@ public class DisplayBookings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_display_bookings);
+        setContentView(R.layout.activity_ongoing);
 
         button = findViewById(R.id.button6);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
         lv = findViewById(R.id.lv);
         modelArrayList = new ArrayList<>();
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity1();
-            }
-
-            private void openActivity1() {
-                Intent intent = new Intent(DisplayBookings.this, Ongoing.class);
-                startActivity(intent);
-            }
-        });
-
-        CustomBooking customAdapter = new CustomBooking(R.layout.bookingsingleview, DisplayBookings.this, modelArrayList);
+        CustomBooking customAdapter = new CustomBooking(R.layout.bookingsingleview, Ongoing.this, modelArrayList);
         lv.setAdapter(customAdapter);
 
         customAdapter.setViewButtonClickListener(new CustomBooking.ViewButtonClickListener() {
@@ -70,7 +59,7 @@ public class DisplayBookings extends AppCompatActivity {
     }
 
     private void displayRetrofitData() {
-        Toast.makeText(DisplayBookings.this, "Bookings Loading.....", Toast.LENGTH_LONG).show();
+        Toast.makeText(Ongoing.this, "Bookings Loading.....", Toast.LENGTH_LONG).show();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -81,24 +70,37 @@ public class DisplayBookings extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<ReservationBooked>> call, Response<ArrayList<ReservationBooked>> response) {
                 if (response.body() != null) {
-                    modelArrayList = response.body();
-                    CustomBooking customAdapter = new CustomBooking(R.layout.bookingsingleview, DisplayBookings.this, modelArrayList);
+                    ArrayList<ReservationBooked> allReservations = response.body();
+                    modelArrayList.clear();
+
+                    Date currentDate = Calendar.getInstance().getTime();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    String todayDate = dateFormat.format(currentDate);
+
+                    for (ReservationBooked reservation : allReservations) {
+                        if (reservation.getReservationDate().equals(todayDate)) {
+                            modelArrayList.add(reservation);
+                        }
+                    }
+
+                    CustomBooking customAdapter = new CustomBooking(R.layout.bookingsingleview, Ongoing.this, modelArrayList);
                     lv.setAdapter(customAdapter);
+                    Toast.makeText(Ongoing.this, "No Ongoing Reservations", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(DisplayBookings.this, "Response body is empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Ongoing.this, "No Ongoing Reservations", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ArrayList<ReservationBooked>> call, Throwable t) {
-                Toast.makeText(DisplayBookings.this, "Failed to load", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Ongoing.this, "Failed to load", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
     private void openEditReservationActivity(ReservationBooked reservation) {
-        Intent intent = new Intent(DisplayBookings.this, EditReservation.class);
+        Intent intent = new Intent(Ongoing.this, EditReservation.class);
         startActivity(intent);
     }
 
