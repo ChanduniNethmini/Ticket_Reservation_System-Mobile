@@ -20,14 +20,14 @@
             android:src="@drawable/menu" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/add"
             android:padding="5dp"
-            android:background="@color/banner_background"
-            />
+            android:src="@drawable/ic_baseline_face_24"
+            app:tint="@color/black" />
     </RelativeLayout>
 
 <ScrollView

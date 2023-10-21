@@ -85,7 +85,7 @@ public class ReservationCreate extends AppCompatActivity {
                 String count = passengerView.getText().toString();
                 String trainClass = trainClassTextView.getText().toString();
                 Reservation reservation = new Reservation(
-                        "1234888",
+                        "1234886",
                         date,
                         "2023-10-13",
                         id,
